@@ -3,15 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#141b23" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>Meu Banco – Home</title>
+  <link rel="manifest" href="manifest.json" />
   <link rel="icon" type="image/x-icon" href="imagens/www.revolut.com.ico" />
+  <link rel="apple-touch-icon" href="imagens/www.revolut.com.ico" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="phone">
     <!-- Topo: avatar, busca, atalhos -->
     <header class="topbar">
-      <button class="avatar" aria-label="Perfil"><span>EM</span><i class="badge"></i></button>
+      <div class="brand-mark" aria-label="Logo da Revolut">
+        <img src="imagens/www.revolut.com.ico" alt="Logo da Revolut" />
+      </div>
       <label class="search">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
         <input id="search" type="search" placeholder="Pesquisar" autocomplete="off" />
@@ -22,6 +29,7 @@
       <button class="round" data-toast="Cartões em breve" aria-label="Cartões">
         <svg viewBox="0 0 24 24" class="fill"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2H3zM3 11h18v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
       </button>
+      <button class="avatar" aria-label="Perfil"><span>EM</span><i class="badge"></i></button>
     </header>
 
     <!-- Saldo -->

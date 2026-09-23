@@ -47,10 +47,16 @@ svg.fill { fill: currentColor; stroke: none; }
 
 /* Topo */
 .topbar { display: flex; align-items: center; gap: 10px; }
+.brand-mark {
+  width: 42px; height: 42px; flex: none; border-radius: 14px; display: grid; place-items: center;
+  background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.18); box-shadow: 0 12px 22px rgba(0,0,0,0.18);
+}
+.brand-mark img { width: 22px; height: 22px; object-fit: contain; display: block; }
 .avatar {
   position: relative; width: 48px; height: 48px; flex: none; border-radius: 50%;
   background: linear-gradient(135deg, #d9a98a, #7a5a4a); border: 2px solid var(--border);
   display: grid; place-items: center; font-weight: 700; font-size: 14px;
+  margin-left: 2px;
 }
 .badge { position: absolute; top: -2px; right: -2px; width: 10px; height: 10px; border-radius: 50%; background: #ff4d4f; }
 .search {
