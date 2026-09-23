@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Meu Banco – Home</title>
+  <link rel="icon" type="image/x-icon" href="imagens/www.revolut.com.ico" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="phone">
+    <!-- Topo: avatar, busca, atalhos -->
+    <header class="topbar">
+      <button class="avatar" aria-label="Perfil"><span>EM</span><i class="badge"></i></button>
+      <label class="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <input id="search" type="search" placeholder="Pesquisar" autocomplete="off" />
+      </label>
+      <button class="round" data-toast="Análises em breve" aria-label="Análises">
+        <svg viewBox="0 0 24 24" class="fill"><rect x="4" y="12" width="4" height="8" rx="1"/><rect x="10" y="4" width="4" height="16" rx="1"/><rect x="16" y="9" width="4" height="11" rx="1"/></svg>
+      </button>
+      <button class="round" data-toast="Cartões em breve" aria-label="Cartões">
+        <svg viewBox="0 0 24 24" class="fill"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2H3zM3 11h18v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      </button>
+    </header>
+
+    <!-- Saldo -->
+    <section class="balance" aria-live="polite">
+      <p id="accountLabel" class="muted">Cliente · Emilly Máximo Quintiliano</p>
+      <button id="amount" class="amount" aria-label="Mostrar ou ocultar saldo"></button>
+      <button class="pill" data-toast="Lista de contas em breve">Contas</button>
+      <div id="dots" class="dots" role="tablist" aria-label="Contas"></div>
+    </section>
+
+    <aside id="accountDetails" class="account-panel hidden" role="dialog" aria-modal="true" aria-labelledby="accountDetailsTitle">
+      <div class="account-panel__content">
+        <div class="account-panel__header">
+          <div>
+            <p class="muted small">Conta</p>
+            <h3 id="accountDetailsTitle">Emilly Máximo Quintiliano</h3>
+          </div>
+          <button id="closeAccountDetails" class="close-panel" aria-label="Fechar detalhes">×</button>
+        </div>
+
+        <div class="account-panel__info">
+          <span>Saldo atual</span>
+          <strong id="detailBalance">R$ 7.853,00</strong>
+        </div>
+
+        <ul class="account-panel__list">
+          <li><span>Último gasto</span><strong>Pão de Açúcar Morumbi</strong></li>
+          <li><span>Próximo</span><strong>McDonald’s Aricanduva</strong></li>
+        </ul>
+
+        <button id="toggleBalanceDetail" class="panel-button">Mostrar saldo</button>
+      </div>
+    </aside>
+
+    <!-- Ações rápidas -->
+    <nav class="actions" aria-label="Ações rápidas">
+      <button data-toast="Depositar"><span class="round big"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>Depositar</button>
+      <button data-toast="Pix"><span class="round big"><svg viewBox="0 0 24 24"><path d="m12 3 4 4-4 4-4-4zM12 13l4 4-4 4-4-4zM3 12l4-4M21 12l-4-4"/></svg></span>Pix</button>
+      <button data-toast="Movimentar"><span class="round big"><svg viewBox="0 0 24 24"><path d="M4 7h4l8 10h4M4 17h4l3-4M13 11l3-4h4M18 5l2 2-2 2M18 15l2 2-2 2"/></svg></span>Movimentar</button>
+      <button data-toast="Mais opções"><span class="round big"><svg viewBox="0 0 24 24" class="fill"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg></span>Mais</button>
+    </nav>
+
+    <!-- Banner promocional -->
+    <aside id="promo" class="card promo">
+      <div>
+        <h2>Ganhe 100% do CDI</h2>
+        <p>Nas contas remuneradas. Aplicam-se termos e condições.</p>
+      </div>
+      <div class="vault" aria-hidden="true"></div>
+      <button id="closePromo" class="close" aria-label="Fechar aviso">×</button>
+    </aside>
+
+    <!-- Transações -->
+    <section class="card list" aria-label="Transações">
+      <ul id="txList"></ul>
+      <p id="empty" class="empty" hidden>Nenhuma transação encontrada.</p>
+    </section>
+
+    <section id="tabPanel" class="tab-panel" aria-live="polite"></section>
+
+    <!-- Menu inferior -->
+    <nav id="tabs" class="tabs" aria-label="Navegação principal">
+      <button class="on" aria-current="page"><svg viewBox="0 0 24 24" class="fill"><path d="M4 4h9a5 5 0 0 1 2 9.6L19 20h-3.4l-3.2-5.6H7.4V20H4zm3.4 3v4.4H13a2.2 2.2 0 0 0 0-4.4z"/></svg>Home</button>
+      <button><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M21 20H3"/></svg>Investir</button>
+      <button><svg viewBox="0 0 24 24"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg>Pagar</button>
+      <button><svg viewBox="0 0 24 24"><path d="M8 4v16M8 5h6a3.5 3.5 0 0 1 0 7H8m0 0h7a3.5 3.5 0 0 1 0 7H8"/></svg>Cripto</button>
+      <button><svg viewBox="0 0 24 24" class="fill"><path d="M12 2 20 6v8a8 8 0 0 1-8 8 8 8 0 0 1-8-8V6zm-1 6v3H8v2h3v3h2v-3h3v-2h-3V8z"/></svg>Pontos</button>
+    </nav>
+
+    <div id="toast" class="toast" role="status"></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
