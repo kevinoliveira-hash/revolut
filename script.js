@@ -1,6 +1,6 @@
 // ---------- Dados (troque por uma chamada de API real) ----------
 const accounts = [
-  { label: "Cliente · Emilly Máximo Quintiliano", balance: 7853.0, currency: "BRL", locale: "pt-BR", symbol: "R$" },
+  { label: "Conta em libras · GBP", balance: 1220.0, currency: "GBP", locale: "en-GB", symbol: "£" },
   { label: "Conta poupança · BRL", balance: 1250.0, currency: "BRL", locale: "pt-BR", symbol: "R$" },
   { label: "Conta dólar · USD", balance: 42.1, currency: "USD", locale: "en-US", symbol: "US$" },
   { label: "Conta euro · EUR", balance: 0, currency: "EUR", locale: "de-DE", symbol: "€" },
